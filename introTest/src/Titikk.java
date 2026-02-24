@@ -3,14 +3,14 @@
  //Pembuat     : Ghatfan Muhammad Atiwiar
  //Tanggal     : 20 Februari 2026
  //
-public class Titik {
+public class Titikk {
     /*********** ATRIBUT ***********/
     double absis;
     double ordinat;
 
     /*********** METHOD ***********/
     // konstruktor untuk membuat titik (0,0)
-    Titik() {
+    Titikk() {
         absis = 0;
         ordinat = 0;
     }
@@ -41,10 +41,6 @@ public class Titik {
         ordinat = ordinat + y; // Diperbaiki dari gambar (sebelumnya + x)
     }
 
-    // mencetak koordinat titik
-    void printTitik() {
-        System.out.println("Titik (" + absis + "," + ordinat + ")");
-    }
 
 } // end class Titik
 
