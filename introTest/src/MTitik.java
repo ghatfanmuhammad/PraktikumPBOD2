@@ -3,9 +3,9 @@
  //Pembuat     : Ghatfan Muhammad Atiwiar
  //Tanggal     : 20 Februari 2026
  //
-public class MTitikk {
+public class MTitik {
     public static void main(String[] args) {
-        Titikk T1 = new Titikk(); // Membuat objek titik T1 (0,0)
+        Titik T1 = new Titik(); // Membuat objek titik T1 (0,0)
         T1.setAbsis(105); // mengubah absis T1 dengan nilai 3
         T1.setOrdinat(686699); // mengubah ordinat T1 dengan nilai 4
         T1.printTitik(); // mencetak koordinat T1 ke layar
