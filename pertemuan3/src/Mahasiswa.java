@@ -9,10 +9,9 @@ public class Mahasiswa {
     private String nama;
     private String prodi;
     private ArrayList<MataKuliah> listMatKul;
-    private Dosen dosenWali;
+    private DosenTetap dosenWali;
     private Kendaraan kendaraan;
 
-    /************** METHOD **************/
     public Mahasiswa() {
         this.nama = "";
         this.nim = "";
@@ -37,43 +36,33 @@ public class Mahasiswa {
     public String getNama() {
         return nama;
     }
-
     public String getProdi() {
         return prodi;
     }
-
-    public Dosen getDosenWali() {
+    public DosenTetap getDosenWali() {
         return dosenWali;
     }
-
     public Kendaraan getKendaraan() {
         return kendaraan;
     }
-
     public void setNim(String nim) {
         this.nim = nim;
     }
-
     public void setNama(String nama) {
         this.nama = nama;
     }
-
     public void setProdi(String prodi) {
         this.prodi = prodi;
     }
-
-    public void setDosenWali(Dosen dosenWali) {
+    public void setDosenWali(DosenTetap dosenWali) {
         this.dosenWali = dosenWali;
     }
-
     public void setKendaraan(Kendaraan kendaraan) {
         this.kendaraan = kendaraan;
     }
-
     public void addMatKul(MataKuliah newMatKul) {
         listMatKul.add(newMatKul);
     }
-
     public int getJumlahSKS() {
         int total = 0;
         for (int i = 0; i < listMatKul.size(); i++) {

@@ -1,90 +1,82 @@
- //*Nama file : Titik.java
- //Deskripsi : berisi atribut dan method dalam class Titik
- //Pembuat     : Ghatfan Muhammad Atiwiar
- //Tanggal     : 20 Februari 2026
- //
-
 public class Titik {
-    /************** ATRIBUT **************/
-    double absis;
-    double ordinat;
-    static int countertitik = 0;
+   double absis;
+   double ordinat;
+   static int counterTitik = 0;
 
-    /************** METHOD **************/
-    // Konstruktor untuk membuat titik (0,0)
-    Titik() {
-        absis = 0;
-        ordinat = 0;
-        countertitik++;
-    }
+   public Titik(double var1, double var3) {
+      this.absis = var1;
+      this.ordinat = var3;
+      ++counterTitik;
+   }
 
-    Titik(double absis, double ordinat) {
-        this.absis = absis;
-        this.ordinat = ordinat;
-        countertitik++;
-    }
+   public Titik() {
+      this((double)0.0F, (double)0.0F);
+   }
 
+   public static int getCounterTitik() {
+      return counterTitik;
+   }
 
-    // mengembalikan nilai absis
-    double getAbsis() {
-        return absis;
-    }
+   public double getAbsis() {
+      return this.absis;
+   }
 
-    // mengembalikan nilai ordinat
-    double getOrdinat() {
-        return ordinat;
-    }
+   public double getOrdinat() {
+      return this.ordinat;
+   }
 
-    // mengeset absis titik dengan nilai baru x
-    void setAbsis(double x) {
-        absis = x;
-    }
+   public void setAbsis(double var1) {
+      this.absis = var1;
+   }
 
-    // mengeset ordinat titik dengan nilai baru y
-    void setOrdinat(double y) {
-        ordinat = y;
-    }
+   public void setOrdinat(double var1) {
+      this.ordinat = var1;
+   }
 
-    // menggeser nilai absis dan ordinat titik masing-masing sejauh x dan y
-    void geser(double x, double y) {
-        absis = absis + x;
-        ordinat = ordinat + y;
-    }
+   public void geser(double var1, double var3) {
+      this.absis += var1;
+      this.ordinat += var3;
+   }
 
-    // mengeluarkan letak kuadran titik
-    int getKuadran() {
-        if (absis > 0 && ordinat > 0) {
-            return 1;
-        } else if (absis < 0 && ordinat > 0) {
-            return 2;
-        } else if (absis < 0 && ordinat < 0) {
-            return 3;
-        } else if (absis > 0 && ordinat < 0) {
-            return 4;
-        } else {
-            return 0; 
-        }
-    }
+   public int getKuadran() {
+      if (this.absis > (double)0.0F && this.ordinat > (double)0.0F) {
+         return 1;
+      } else if (this.absis < (double)0.0F && this.ordinat > (double)0.0F) {
+         return 2;
+      } else if (this.absis < (double)0.0F && this.ordinat < (double)0.0F) {
+         return 3;
+      } else {
+         return this.absis > (double)0.0F && this.ordinat < (double)0.0F ? 4 : 0;
+      }
+   }
 
-    // Jarak dari titik pusat
-    double getJarakPusat() {
-        return Math.sqrt(absis*absis + ordinat*ordinat);
-    }
+   public double getJarakPusat() {
+      return Math.sqrt(this.absis * this.absis + this.ordinat * this.ordinat);
+   }
 
-    // Jarak antar titik
-    double getJarak(Titik T1) {
-        return Math.sqrt(Math.pow((this.absis - T1.absis),2) + Math.pow((this.ordinat - T1.ordinat),2));
-    }
+   public double getJarak(Titik var1) {
+      double var2 = this.absis - var1.absis;
+      double var4 = this.ordinat - var1.ordinat;
+      return Math.sqrt(var2 * var2 + var4 * var4);
+   }
 
+   public void refleksiX() {
+      this.ordinat = -this.ordinat;
+   }
 
-    // mencetak koordinat titik
-    void printTitik() {
-        System.out.println("Titik (" + absis + "," + ordinat + ")");
-    }
+   public void refleksiY() {
+      this.absis = -this.absis;
+   }
 
-    static int getCounterTitik(){
-        return countertitik;
-    }
-} // end class Titik
+   public Titik getRefleksiX() {
+      return new Titik(this.absis, -this.ordinat);
+   }
 
+   public Titik getRefleksiY() {
+      return new Titik(-this.absis, this.ordinat);
+   }
 
+   public void printTitik() {
+      System.out.println("Titik (" + this.absis + "," + this.ordinat + ")");
+   }
+}
