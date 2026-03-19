@@ -8,10 +8,9 @@ public class MBangunDatar {
         System.out.println();
         bulat.printInfo();
         System.out.println();
-        kotak.setSisi(100.0);
         kotak.setWarna("Hijau");  
         System.out.println("Data Persegi Baru:");
-        System.out.println("Sisi baru: " + kotak.getSisi());
+        System.out.println("Sisi baru: " + kotak.getJmlSisi());
         System.out.println("Warna baru: " + kotak.getWarna());
         System.out.println("Luas baru: " + kotak.getLuas());
     }
