@@ -1,0 +1,36 @@
+// NIM       : 24060124140171
+// Deskripsi : Soal 2 - Aplikasi Kelas Mahasiswa (Overloading)
+// Nama      : Ghatfan Muhammad Atiwiar
+// Tanggal   : Selasa 21 April 2026
+
+public class Soal2Overloading {
+    public static void main(String[] args) {
+        System.out.println("2c. Konstruktor Default ===");
+        Mahasiswa mhs1 = new Mahasiswa();
+        mhs1.tampilData();
+        System.out.println("\n2d. Konstruktor Tiga Parameter ");
+        Mahasiswa mhs2 = new Mahasiswa("22001", "Ghatfan Muhammad Atiwiar", "Informatika");
+        mhs2.tampilData();
+        System.out.println("\n2e. Konstruktor Kloning ");
+        Mahasiswa mhs3 = new Mahasiswa(mhs2);
+        mhs3.tampilData();
+        System.out.println("\n2b. Overloading setProgramStudi");
+
+        // Varian 1: tanpa parameter
+        System.out.println("Varian 1: Tanpa Parameter");
+        mhs1.setProgramStudi();
+        mhs1.tampilData();
+
+        // Varian 2: satu parameter String
+        System.out.println("\nVarian 2: Satu Parameter String");
+        mhs1.setProgramStudi("Sistem Informasi");
+        mhs1.tampilData();
+
+        // Varian 3: satu parameter objek Mahasiswa lain
+        System.out.println("\nVarian 3: Parameter Objek Mahasiswa Lain");
+        Mahasiswa mhs4 = new Mahasiswa("22002", "Sari Dewi", "n/a");
+        mhs4.setProgramStudi(mhs2); 
+        System.out.println("mhs4 setelah setProgramStudi(mhs2):");
+        mhs4.tampilData();
+    }
+}
